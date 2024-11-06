@@ -1,0 +1,19 @@
+<h1>Log In to Continue</h1>
+{{server-error serverSideFormError=serverSideFormError}}
+<form class="logInForm" method="post">
+    User Name :{{input name="userName" type="email" class="validate"
+  value=userName change=(action 'userNameValidation' userName)}}
+    <br> Password :{{input name="Password" type="password" class="validate"
+  value=Password change=(action 'passwordValidation' Password)}}
+    <br>
+
+    <button type="button" name="button" class="btn waves-effect waves-light" {{action "processLoginAction"}}>
+          {{#if serverSideFormError.length 0}}
+              Check
+          {{else}}
+              Join Now
+          {{/if}}
+           <i class="material-icons right">send</i>
+    </button>
+
+</form>

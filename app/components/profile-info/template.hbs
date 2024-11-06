@@ -1,0 +1,29 @@
+<div class="card-image waves-effect waves-block waves-light">
+    <img class="activator pofile-cover" src="assets/images/profile-cover.jpg">
+</div>
+<figure class="card-profile-image">
+    <img src="assets/images/dev.png" alt="profile image" class="circle z-depth-2 responsive-img activator">
+</figure>
+<div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">{{userInsession.firstName}} {{userInsession.lastName}}
+      <i class="material-icons right">more_vert</i></span>
+    <p><a>CWID: {{userInsession.cwid}}</a></p>
+</div>
+
+
+<div class="card-reveal teal lighten-3">
+    <span class="card-title grey-text text-darken-4">{{userInsession.firstName}} {{userInsession.lastName}}
+      <i class="material-icons right">close</i></span>
+    {{#if userInsession.isStudent}}
+        <h5>Student</h5>
+    {{else}}
+        <h5>Teacher</h5>
+    {{/if}}
+    <p>{{userInsession.desc}}</p>
+    <div class="divider"></div>
+    <p><i class="material-icons left">email</i>{{userInsession.emailId}}</p>
+    <p><i class="material-icons left">fingerprint</i>{{userInsession.cwid}}</p>
+    <p><i class="material-icons left">local_phone</i>{{userInsession.phone}}</p>
+    <p><i class="material-icons left">home</i>{{userInsession.streetAddress}}, {{userInsession.city}}, {{userInsession.pincode}}</p>
+    <p><i class="material-icons left">location_on</i>{{userInsession.country}}</p>
+</div>

@@ -1,0 +1,25 @@
+<nav role="navigation">
+    <div class="nav-wrapper container">
+        {{#if isSIgnedIn}}
+            <a href="#" data-activates="nav-mobile" class="hide-on-large-only button-collapse"><i class="material-icons">menu</i></a>
+        {{/if}}
+        <ul>
+            <li class="left">
+                <a class="flow-text">Quizzeria</a>
+            </li>
+            <li class="right">
+                {{#if isSIgnedIn}}
+                    <a type="button" class="waves-effect waves-light btn" {{action "logOut"}}>Log Out</a>
+                {{/if}}
+            </li>
+        </ul>
+        <div class="login-signup-div">
+            {{#if showLoginButton}}
+                {{#link-to 'log-in' tagName='a' class='waves-effect waves-light btn' }}Log In{{/link-to}}
+            {{/if}}
+            {{#if showJoinButton}}
+                {{#link-to 'sign-up' tagName='a' class='waves-effect waves-light btn' }}Sign Up{{/link-to}}
+            {{/if}}
+        </div>
+    </div>
+</nav>

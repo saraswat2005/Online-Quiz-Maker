@@ -1,0 +1,9 @@
+{{#if isSIgnedIn}}
+    {{server-error serverSideFormError=serverSideFormError}} {{
+      quiz-create model=model
+      createQuizObject=(action "createQuizObject")
+    }} {{
+      component addQuestionComponent quizObject=quizObject
+      postQuiz=(action "postQuiz")
+    }}
+{{/if}}

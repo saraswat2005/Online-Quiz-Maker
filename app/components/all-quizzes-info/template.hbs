@@ -1,0 +1,20 @@
+<div class="row card blue-grey darken-1 info-questions-card">
+    <div class="card-content white-text">
+        <span class="card-title">Quiz on {{model.topic}}</span>
+        <p>Should attempt {{model.noOfQuestions}} questions within {{model.timeLimit}} Minutes</p>
+        <p>Should be given after {{model.fromDate}} and before {{model.toDate}}</p>
+    </div>
+    {{#if isStudent}}
+        <div class="card-action">
+            <button class="btn waves-effect waves-light btn-large" {{action 'attemptQuiz' model.id}}>Attempt</button>
+            <button class="btn waves-effect waves-light btn-large right" {{action 'hideQuiz'}}>Hide</button>
+        </div>
+    {{/if}}
+</div>
+
+{{
+  component dynamic-component model=model
+  checkAnswer=(action "checkAnswer")
+  submitQuiz=(action "submitQuiz")
+  addReports=(action "addReports")
+}}

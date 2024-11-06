@@ -1,0 +1,25 @@
+<div class="row card">
+    <div class="card-content red lighten-3 black-text">
+        <span class="card-title">Quiz on {{model.topic}}</span>
+        <p>Should attempt {{model.noOfQuestions}} questions within {{model.timeLimit}} Minutes</p>
+        <p>Should be given after {{model.fromDate}} and before {{model.toDate}}</p>
+    </div>
+    <div class="card-content">
+        {{#each randomizedQuizQuestions as |question|}}
+            {{
+                question-dialog quizId=model.id question=question
+                checkAnswer=(action "checkAnswer" value=answerGiven)
+                addReports=(action "addReports")
+            }}
+        {{/each}}
+    </div>
+
+    <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">
+            <button class="btn waves-effect waves-light btn-large" {{action 'submitQuiz'}}>Submit
+              <i class="material-icons right">send</i></button>
+        </div>
+        <div class="col s4"></div>
+    </div>
+</div>
